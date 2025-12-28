@@ -1,0 +1,305 @@
+/* Базовый сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+        a {
+            color: #7a7a7a; /* Синий цвет текста ссылки */
+            text-decoration: none; /* Убираем подчёркивание */
+            font-weight: 500; /* Средняя насыщенность шрифта */
+            transition: color 0.3s ease, text-decoration 0.3s ease; /* Плавный переход */
+            position: relative;
+        }
+
+        a:hover {
+            color: #339a43; /* Красный цвет при наведении */
+            text-decoration: underline; /* Подчёркивание при наведении */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        a:focus {
+            outline: 2px dashed #4c95f0; /* Пунктирная рамка при фокусе */
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        a:active {
+            color: #3a8e3b; /* Тёмно‑красный при нажатии */
+            text-decoration: underline;
+        }
+
+        /* Дополнительно: эффект линии снизу при наведении */
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #389b49;
+            transition: width 0.3s ease;
+            display: block;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+header {
+  background-color: #3c00bdf0;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    max-height: 120px;
+    /* height: 1%; */
+    width: auto;
+    text-align: center;
+}
+
+header h1 {
+    color: #ffffff;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    color: #3498db;
+    font-size: 1.6rem;
+    margin: 1.5rem 0 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+ul, ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.description {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.lear {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.task {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.example {
+    background-color: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 1rem 0;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 8px;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    main {
+        padding: 0 0.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0.75rem 0;
+    }
+    
+    header img {
+        max-height: 50px;
+    }
+    
+    main {
+        margin: 1.5rem auto;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+        margin: 1.25rem 0 0.8rem;
+    }
+    
+    .description, .task {
+        padding: 1.5rem;
+    }
+    
+    button {
+        width: 100%;
+        margin: 0.75rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.9rem;
+    }
+    
+    header img {
+        max-height: 40px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+        margin: 1rem 0 0.7rem;
+    }
+    
+    .description, .task {
+        padding: 1.25rem;
+    }
+    
+    ul, ol {
+        padding-left: 1.5rem;
+    }
+}
+
+/* Дополнительные стили для улучшения читаемости */
+strong {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+code {
+    background-color: #f1f2f6;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.footer {
+  background-color: #3c00bdf0;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  margin-bottom: 15px;
+}
+
+.footer-title {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.footer-slogan {
+  color: #ffffff;
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.footer-copyright {
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: 20px;
+}
